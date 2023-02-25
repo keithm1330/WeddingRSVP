@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>RSVP Page</title>
+    <title>Samantha & Keith Wedding</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
@@ -22,8 +22,27 @@
         margin-top: 20px;
       }
 
-      body {
-        background-image: url('https://www.mountwolseley.ie/upload/slide_images/1st-image-on-slider---18th-hole.jpg');
+<!--      body {-->
+<!--        background: url('app-bg.jpg');-->
+<!--      }-->
+
+            .bg {
+        box-sizing: border-box;
+        /*Not necessary in this situation*/
+        display: block;
+        /*Not necessary, but we do want it this way*/
+        width: 100%;
+        height: 100%;
+        /* Now 100% height will work */
+        padding: 0;
+        /* No padding */
+        margin: 0;
+        /* No margins */
+        background: url('rsvp-bg.jpg');
+        no-repeat center center;
+        /* Shorthand: image, repeat, X align, Y align. */
+        background-size: cover;
+        /* Cover all available space*/
       }
 
       @font-face {
@@ -49,6 +68,7 @@
     </style>
 </head>
 <body>
+<div class="bg">
 <div class="container">
     <h1>RSVP</h1>
     <h2>Please RSVP by filling out the form below:</h2>
@@ -71,6 +91,7 @@
         </div>
         <button type="submit" class="btn btn-secondary btn-option testFont">Submit</button>
     </form>
+</div>
 </div>
 </body>
 </html>
