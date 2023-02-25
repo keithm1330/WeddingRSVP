@@ -38,7 +38,7 @@ public class GreetingController {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(subject);
-        message.setText("People: "+text.getNames()+" attending: "+text.getAttending()+ "Message : "+text.getMessage());
+        message.setText("People: "+text.getNames()+"\nAttending: "+text.getAttending()+ "\nMessage : "+text.getMessage());
         emailSender.send(message);
     }
 }
