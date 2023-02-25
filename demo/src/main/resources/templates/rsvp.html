@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>RSVP Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .container {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .btn-primary {
+        margin-top: 20px;
+      }
+
+      body {
+        background-image: url('https://www.mountwolseley.ie/upload/slide_images/1st-image-on-slider---18th-hole.jpg');
+      }
+
+      @font-face {
+        font-family: myFirstFont;
+        src: url(./Valerion.otf);
+      }
+
+      h1 {
+        font-family: myFirstFont;
+      }
+
+      h2 {
+        font-family: myFirstFont;
+      }
+
+      h3 {
+        font-family: myFirstFont;
+      }
+
+      .testFont {
+        font-family: myFirstFont;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>RSVP</h1>
+    <h2>Please RSVP by filling out the form below:</h2>
+    <form action="#" th:action="@{/rsvp}" th:object="${greeting}" method="post">
+        <div class="form-group testFont">
+            <label for="attending">Will you be attending:</label>
+            <select th:field="*{attending}" class="form-control" id="attending" required>
+                <option value="">Will you be attending</option>
+                <option th:value="'yes'" th:text="Yes"></option>
+                <option th:value="'no'" th:text="No"></option>
+            </select>
+        </div>
+        <div class="form-group testFont">
+            <label for="name">Name:</label>
+            <input th:field="*{names}" type="text" class="form-control" id="name" placeholder="Enter your names" required>
+        </div>
+        <div class="form-group testFont">
+            <label for="message">Message / Dietary Requirements:</label>
+            <textarea th:field="*{message}" class="form-control" id="message" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary btn-option testFont">Submit</button>
+    </form>
+</div>
+</body>
+</html>
