@@ -21,20 +21,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-docker {
-	name "rsvp-app"
-	dockerfile file('Dockerfile')
-	copySpec.from(jar).rename(".*", "springreadyapp.jar")
-	buildArgs(['JAR_FILE': "springreadyapp.jar"])
-	files 'springreadyapp.jar'
-}
-
-dockerRun {
-	name "${project.name}"
-	image "${project.name}:${project.version}"
-	ports '8081:8081'
-	clean true
-}
 
 
 tasks.named('test') {
